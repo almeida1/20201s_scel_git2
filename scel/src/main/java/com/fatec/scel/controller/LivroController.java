@@ -10,9 +10,11 @@ import com.fatec.scel.model.Livro;
 @Controller
 @RequestMapping("/livros")
 public class LivroController {
+
 	@GetMapping("/menu") // Define a url que quando for requisitada chamara o metodo
 	public String home() {
 		// Retorna a view que deve ser chamada, neste exemplo a pagina menu (html)
 		return "menu";
+
 	}
 }
