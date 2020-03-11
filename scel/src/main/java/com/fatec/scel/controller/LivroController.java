@@ -16,13 +16,22 @@ public class LivroController {
 		// Retorna a view que deve ser chamada, neste exemplo a pagina menu (html)
 		return "menu";
 	}
+	/**
+	 * Mostra a interface cadastrarLivro com o parametro livro vinculado com a interface
+	 * @param livro vinculado com a interface
+	 * @return a tela que deve ser apresentada
+	 */
 	@GetMapping("/cadastrar")
 	public ModelAndView cadastraLivro(Livro livro) {
 		ModelAndView mv = new ModelAndView("cadastrarLivro");
 		mv.addObject("livro", livro);
 		return mv;
 	}
-
+	/**
+	 * Mostra o isbn do livro na interface consultarLivro
+	 * @param o parametro livro esta vinculado na interface cadastrarLivro
+	 * @return retorna a interface consultarLivro com parametro message que esta vinculado a interface
+	 */
 	@PostMapping("/salvar")
 	public ModelAndView adicionar(Livro livro) {
 		System.out.println("ISBN digitado na interface ===>" + livro.getIsbn());
